@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import portrait from './assets/gemini.png'
-import resume from './assets/Ragulan_R_Resume_ATS.pdf'
+import resume from './assets/Ragulan_resume.pdf'
 import './App.css'
 
 const Arrow = () => <span aria-hidden="true">↗</span>
