@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import portrait from './assets/gemini.png'
+import resume from './assets/Ragulan_R_Resume_ATS.pdf'
 import './App.css'
 
 const Arrow = () => <span aria-hidden="true">↗</span>
@@ -41,12 +42,50 @@ const skillIcons: Record<string, string> = {
   thunderclient: '/thunder-client.svg',
 }
 
+const showcaseImages = import.meta.glob('./assets/{buttons,chatbot,survay form,voice-agent}/*.png', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>
+
+const productShowcases = [
+  { id: 'survey', label: 'Survey Form', folder: 'survay form' },
+  { id: 'chatbot', label: 'Chatbot', folder: 'chatbot' },
+  { id: 'buttons', label: 'Buttons', folder: 'buttons' },
+  { id: 'voice', label: 'Voice Agent', folder: 'voice-agent' },
+].map((showcase) => ({
+  ...showcase,
+  images: Object.entries(showcaseImages)
+    .filter(([path]) => path.includes(`/assets/${showcase.folder}/`))
+    .sort(([first], [second]) => first.localeCompare(second))
+    .map(([, image]) => image),
+}))
+
 function App() {
   const introText = '— Hey, I am Ragulan'
   const roleText = 'Full Stack Developer'
   const [typedIntro, setTypedIntro] = useState('')
   const [typedRole, setTypedRole] = useState('')
   const [typingDone, setTypingDone] = useState(false)
+  const [activeShowcase, setActiveShowcase] = useState(0)
+  const [showcaseSlides, setShowcaseSlides] = useState<{ current: number; previous: number | null }>({ current: 0, previous: null })
+  const currentShowcase = productShowcases[activeShowcase]
+  const activeSlide = showcaseSlides.current
+
+  const selectShowcase = (index: number) => {
+    setActiveShowcase(index)
+    setShowcaseSlides({ current: 0, previous: null })
+  }
+
+  useEffect(() => {
+    const slider = window.setInterval(() => {
+      setShowcaseSlides(({ current }) => ({
+        previous: current,
+        current: (current + 1) % currentShowcase.images.length,
+      }))
+    }, 3200)
+
+    return () => window.clearInterval(slider)
+  }, [currentShowcase])
 
   useEffect(() => {
     let introIndex = 0
@@ -116,7 +155,7 @@ function App() {
           <a href="#experience">Experience</a>
           <a href="#projects">Project</a>
         </nav>
-        <a className="contact-link" href="mailto:hello@example.com">Contact Me</a>
+        <a className="contact-link" href="#contact">Contact Me</a>
       </header>
 
       <section className="hero-section" id="home">
@@ -128,16 +167,16 @@ function App() {
           </p>
           <div className="actions">
            
-            <a className="primary-button" href="#resume"><span>⇩</span>Download Resume <Arrow /></a>
+            <a className="primary-button" href={resume} download="Ragulan_R_Resume_ATS.pdf"><span>⇩</span>Download Resume <Arrow /></a>
           </div>
           <div className="social-links" aria-label="Social links">
-            <a className="linkedin-icon" href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <a className="linkedin-icon" href="https://www.linkedin.com/in/ragulan-r-b18606309" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5V19H3.45V8.5h3.49ZM5.2 3A2.03 2.03 0 1 1 5.2 7.06 2.03 2.03 0 0 1 5.2 3ZM20.55 12.98V19h-3.48v-5.62c0-1.42-.03-3.24-1.98-3.24-1.98 0-2.28 1.55-2.28 3.14V19H9.32V8.5h3.35v1.44h.05c.46-.88 1.61-1.8 3.31-1.8 3.53 0 4.18 2.33 4.18 5.35Z" /></svg>
             </a>
             <a className="whatsapp-icon" href="https://wa.me/919080301069" target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.48 0 .13 5.35.13 11.93c0 2.1.55 4.14 1.6 5.94L.03 24l6.3-1.65a11.95 11.95 0 0 0 5.71 1.45h.01c6.57 0 11.92-5.35 11.92-11.93 0-3.18-1.24-6.17-3.45-8.39ZM12.05 21.8a9.92 9.92 0 0 1-5.05-1.38l-.36-.22-3.74.98 1-3.65-.24-.38a9.9 9.9 0 0 1-1.53-5.28c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.91 7.02c0 5.47-4.45 9.93-9.93 9.93Zm5.44-7.43c-.3-.15-1.76-.87-2.04-.97-.27-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.18.2-.35.22-.65.07-1.77-.88-2.93-1.57-4.1-3.57-.31-.54.31-.5.89-1.67.1-.2.05-.38-.02-.53-.07-.15-.68-1.64-.93-2.25-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.53.08-.8.38-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.13 3.25 5.15 4.56 1.91.83 2.66.9 3.62.76.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.3.18-1.42-.08-.12-.28-.2-.58-.35Z" /></svg>
             </a>
-            <a className="email-icon" href="mailto:ragul5595@gmail.com" aria-label="Email">
+            <a className="email-icon" href="mailto:ragulan@gmail.com" aria-label="Email">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.51l9 5.4 9-5.4V7H3Zm18 10V9.84l-8.49 5.1a1 1 0 0 1-1.02 0L3 9.84V17h18Z" /></svg>
             </a>
           </div>
@@ -205,7 +244,7 @@ function App() {
 
       <section className="projects-section" id="projects" aria-labelledby="projects-title">
         <div className="projects-heading">
-          <p className="section-kicker">— SELECTED WORK</p>
+          
           <h2 id="projects-title">Projects that <span>Deliver Results</span></h2>
           <p>Full-stack products designed for real business workflows, automation, and scale.</p>
         </div>
@@ -229,9 +268,8 @@ function App() {
               <li>Improved backend reliability using cron jobs and retry mechanisms.</li>
             </ul>
             <div className="project-footer">
-              <span>Angular + Laravel</span>
-              <span className="project-credentials"><small>Email: ragulan@gmail.com</small><small>Password: Ragul@2411</small></span>
-              <a href="https://rbot.co.in/" target="_blank" rel="noreferrer">Demo access available ↗</a>
+              <span>Angular + Laravel + MySQL</span>
+             
             </div>
           </article>
           <article className="project-card">
@@ -248,15 +286,54 @@ function App() {
               <li>Integrated communication systems for customer engagement and retention.</li>
               <li>Developed role-based user management system (Admin, Employee).</li>
               <li>Ensured data security and validation using RBAC and masking techniques.</li>
+              <li>Implemented real-time notifications for important updates and alerts.</li>
+               <li>User attendance tracking modules to monitor employee presence.</li>
             </ul>
-            <div className="project-footer"><span>React + Node.js</span><span>View case study ↗</span></div>
+            <div className="project-footer"><span>React + Node.js + MySQL</span></div>
           </article>
+        </div>
+      </section>
+
+      <section className="product-showcase-section" aria-labelledby="product-showcase-title">
+        <div className="product-showcase-heading">
+          <h2 id="product-showcase-title">Explore the <span>Project</span></h2>
+        
+        </div>
+        <div className="showcase-tabs" role="tablist" aria-label="Product previews">
+          {productShowcases.map((showcase, index) => (
+            <button
+              className={index === activeShowcase ? 'is-active' : ''}
+              key={showcase.id}
+              onClick={() => selectShowcase(index)}
+              role="tab"
+              aria-selected={index === activeShowcase}
+              type="button"
+            >
+              {showcase.label}
+            </button>
+          ))}
+        </div>
+        <div className="showcase-slider">
+          {showcaseSlides.previous !== null && (
+            <img
+              className="showcase-slide showcase-slide-out"
+              key={`previous-${currentShowcase.id}-${showcaseSlides.previous}`}
+              src={currentShowcase.images[showcaseSlides.previous]}
+              alt=""
+            />
+          )}
+          <img
+            className="showcase-slide showcase-slide-in"
+            key={`${currentShowcase.id}-${activeSlide}`}
+            src={currentShowcase.images[activeSlide]}
+            alt={`${currentShowcase.label} screen ${activeSlide + 1}`}
+          />
+          <span className="showcase-counter">{activeSlide + 1} / {currentShowcase.images.length}</span>
         </div>
       </section>
 
       <section className="education-section" aria-labelledby="education-title">
         <div className="education-heading">
-          <p className="section-kicker">— EDUCATION</p>
           <h2 id="education-title">Academic <span>Journey</span></h2>
         </div>
         <div className="education-list">
@@ -295,20 +372,23 @@ function App() {
 
       <section className="contact-section" id="contact" aria-labelledby="contact-title">
         <div className="contact-heading">
-          <p className="section-kicker">— GET IN TOUCH</p>
           <h2 id="contact-title">Let&apos;s work <span>Together</span></h2>
         </div>
         <div className="contact-grid">
-          <a className="contact-card" href="mailto:Ragul5595@email.com">
+          <a className="contact-card" href="mailto:ragulan@gmail.com">
+            <span className="contact-icon contact-icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.51l9 5.4 9-5.4V7H3Zm18 10V9.84l-8.49 5.1a1 1 0 0 1-1.02 0L3 9.84V17h18Z" /></svg></span>
             <span className="contact-icon">✉</span><span><small>EMAIL</small><strong>Ragul5595@email.com</strong></span><b>↗</b>
           </a>
           <a className="contact-card" href="tel:+919080301069">
+            <span className="contact-icon contact-icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.3.57 3.53.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.23.2 2.42.57 3.53a1 1 0 0 1-.25 1.01l-2.2 2.25Z" /></svg></span>
             <span className="contact-icon">☎</span><span><small>PHONE</small><strong>+91 9080301069</strong></span><b>↗</b>
           </a>
           <div className="contact-card">
-            <span className="contact-icon">⌖</span><span><small>LOCATION</small><strong>Thiruvarur, Tamil Nadu</strong></span>
+            <span className="contact-icon contact-icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.44 7-12A7 7 0 1 0 5 9c0 6.56 7 12 7 12Zm0-9a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" /></svg></span>
+            <span className="contact-icon">⌖</span><span><small>LOCATION</small><strong>Chennai, Tamil Nadu</strong></span>
           </div>
           <a className="contact-card" href="https://github.com/ragulan" target="_blank" rel="noreferrer">
+            <span className="contact-icon contact-icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 .7a11.3 11.3 0 0 0-3.57 22.02c.57.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.33-3.8-1.33-.52-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.15 1.72 1.15 1 1.71 2.63 1.22 3.27.93.1-.72.4-1.22.7-1.5-2.5-.28-5.14-1.24-5.14-5.55 0-1.23.44-2.23 1.15-3.02-.11-.28-.5-1.43.11-2.98 0 0 .94-.3 3.1 1.15a10.8 10.8 0 0 1 5.64 0c2.16-1.45 3.1-1.15 3.1-1.15.61 1.55.22 2.7.11 2.98.71.79 1.15 1.79 1.15 3.02 0 4.32-2.64 5.27-5.15 5.55.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.78.54A11.3 11.3 0 0 0 12 .7Z" /></svg></span>
             <span className="contact-icon">⌘</span><span><small>GITHUB</small><strong>@ragulan</strong></span><b>↗</b>
           </a>
         </div>

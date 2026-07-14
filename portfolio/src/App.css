@@ -112,7 +112,7 @@ nav {
 }
 
 nav a {
-  color: #8584aa;
+  color: white;
   text-decoration: none;
   font-weight: 650;
   transition: color .2s ease;
@@ -262,14 +262,17 @@ h1 {
 
 .social-links .linkedin-icon {
   color: #0a66c2;
+  border-color: #0a66c2;
 }
 
 .social-links .whatsapp-icon {
   color: #25d366;
+  border-color: #25d366;
 }
 
 .social-links .email-icon {
   color: #ea4335;
+  border-color: #ea4335;
 }
 
 .social-links a:hover {
@@ -367,7 +370,7 @@ h1 {
 }
 
 .projects-section {
-  padding: 108px max(24px, 7.8vw);
+  padding: 20px max(24px, 7.8vw);
   background: radial-gradient(circle at 91% 20%, #171033 0, transparent 25%), #090910;
   border-top: 1px solid #191a28;
 }
@@ -551,6 +554,36 @@ h1 {
   font-size: 25px;
 }
 
+.contact-icon:not(.contact-icon-svg) {
+  display: none;
+}
+
+.contact-icon-svg svg {
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+}
+
+.contact-card:nth-child(1) .contact-icon-svg {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, .14);
+}
+
+.contact-card:nth-child(2) .contact-icon-svg {
+  color: #25d366;
+  background: rgba(37, 211, 102, .14);
+}
+
+.contact-card:nth-child(3) .contact-icon-svg {
+  color: #ffad4d;
+  background: rgba(255, 173, 77, .14);
+}
+
+.contact-card:nth-child(4) .contact-icon-svg {
+  color: #f1f1f5;
+  background: rgba(241, 241, 245, .12);
+}
+
 .contact-card small {
   display: block;
   margin-bottom: 5px;
@@ -573,7 +606,7 @@ h1 {
 }
 
 .projects-heading {
-  max-width: 710px;
+  max-width: 800px;
   margin: 0 auto 50px;
   text-align: center;
 }
@@ -721,18 +754,18 @@ h1 {
 
 .project-points li {
   position: relative;
-  padding-left: 19px;
+  padding-left: 24px;
+  font-size: 15px;
 }
 
 .project-points li::before {
   position: absolute;
   left: 0;
-  top: 8px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #9063ec;
-  content: '';
+  top: 0;
+  color: red;
+  content: '❖';
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .project-footer {
@@ -767,7 +800,7 @@ h1 {
 }
 
 .skills-section {
-  padding: 105px 0 90px;
+  padding: 20px 0 90px;
   border-top: 1px solid #191a28;
   background: #0e0e17;
   overflow: hidden;
@@ -964,7 +997,7 @@ h1 {
 
 .experience-heading h2 {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  /* font-family: Georgia, 'Times New Roman', serif; */
   font-size: clamp(40px, 3.6vw, 57px);
   letter-spacing: -2px;
   color: #eeedfc;
@@ -1247,17 +1280,19 @@ h1 {
 
   .experience-date {
     min-height: 0;
-    flex-direction: row;
-    align-items: center;
-    gap: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
     padding: 0 0 22px;
     border-right: 0;
     border-bottom: 1px solid #285158;
   }
 
-  .experience-logo {
-    width: 86px;
-    border-radius: 18px;
+  .experience-img {
+    width: min(100%, 260px);
+    margin-top: 0;
+    align-self: center;
+    object-fit: contain;
   }
 
   .experience-content {
@@ -1278,4 +1313,152 @@ h1 {
   margin-top: 100px;
   width: 100%;
   -ms-high-contrast-adjust: 70px;
+}
+
+.product-showcase-section {
+  padding: 20px max(24px, 7.8vw);
+  overflow: hidden;
+  border-top: 1px solid #191a28;
+  background: radial-gradient(circle at 12% 15%, #1c1538 0, transparent 29%), #090910;
+}
+
+.product-showcase-heading {
+  max-width: 700px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.product-showcase-heading h2 {
+  margin: 0;
+  color: #eeedfc;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(40px, 3.6vw, 57px);
+  letter-spacing: -2px;
+}
+
+.product-showcase-heading h2 span {
+  background: linear-gradient(100deg, #3f79f8, #ac46ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.product-showcase-heading > p:last-child {
+  margin: 18px 0 0;
+  color: #8585b3;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.showcase-tabs {
+  display: flex;
+  width: min(800px, 100%);
+  gap: 10px;
+  margin: 0 auto 28px;
+  padding: 7px;
+  overflow-x: auto;
+  border: 1px solid #2b2840;
+  border-radius: 16px;
+  background: #12121e;
+}
+
+.showcase-tabs button {
+  flex: 1 0 max-content;
+  padding: 13px 19px;
+  border: 0;
+  border-radius: 11px;
+  color: #aaa7c3;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 750;
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+
+.showcase-tabs button:hover,
+.showcase-tabs button:focus-visible {
+  color: #f4f1ff;
+  background: #211c36;
+  outline: none;
+}
+
+.showcase-tabs button.is-active {
+  color: #fff;
+  background: linear-gradient(105deg, #386ff0, #963ce0);
+  box-shadow: 0 7px 18px rgba(81, 54, 206, .3);
+}
+
+.showcase-slider {
+  position: relative;
+  display: grid;
+  width: min(1180px, 100%);
+  aspect-ratio: 2.11 / 1;
+  margin: auto;
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid #302657;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #141322, #0e0e17);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, .25);
+}
+
+.showcase-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.showcase-slide-in {
+  z-index: 1;
+  animation: showcase-slide-in 1.2s cubic-bezier(.22, .8, .3, 1) both;
+}
+
+.showcase-slide-out {
+  animation: showcase-slide-out 1.2s cubic-bezier(.22, .8, .3, 1) both;
+}
+
+.showcase-counter {
+  position: absolute;
+  right: 18px;
+  bottom: 17px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 999px;
+  color: #e9e5ff;
+  background: rgba(10, 9, 18, .72);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+@keyframes showcase-slide-in {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes showcase-slide-out {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-100%); }
+}
+
+@media (max-width:700px) {
+  .experience-img {
+    width: min(100%, 260px);
+    margin-top: 0;
+    align-self: center;
+    object-fit: contain;
+  }
+
+  .product-showcase-section {
+    padding: 75px 20px 55px;
+  }
+
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .showcase-slide-in,
+  .showcase-slide-out {
+    animation: none;
+  }
 }
