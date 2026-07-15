@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import portrait from './assets/gemini.png'
+import resumePdf from './assets/ragulan_resume.pdf'
 import './App.css'
 
 const Arrow = () => <span aria-hidden="true">↗</span>
@@ -166,7 +167,7 @@ function App() {
           </p>
           <div className="actions">
            
-            <a className="primary-button" href="/Ragulan_resume.pdf" download="Ragulan_resume.pdf"><span>⇩</span>Download Resume <Arrow /></a>
+            <a className="primary-button" href={resumePdf} download="Ragulan_resume.pdf"><span>⇩</span>Download Resume <Arrow /></a>
           </div>
           <div className="social-links" aria-label="Social links">
             <a className="linkedin-icon" href="https://www.linkedin.com/in/ragulan-r-b18606309" target="_blank" rel="noreferrer" aria-label="LinkedIn">
