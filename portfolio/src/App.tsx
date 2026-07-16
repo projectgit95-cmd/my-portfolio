@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import portrait from './assets/gemini.png'
-import resumePdf from './assets/ragulan_resume.pdf'
 import './App.css'
+
+const resumePdf = '/ragulan_resume.pdf'
 
 const Arrow = () => <span aria-hidden="true">↗</span>
 
