@@ -8,7 +8,6 @@ const Arrow = () => <span aria-hidden="true">↗</span>
 
 const skills = [
   
-  ['●', 'Figma', 'figma'],
   ['5', 'HTML5', 'html'],
   ['3', 'CSS3', 'css'],
   ['B', 'Bootstrap', 'bootstrap'],
@@ -246,51 +245,81 @@ function App() {
       <section className="projects-section" id="projects" aria-labelledby="projects-title">
         <div className="projects-heading">
           
-          <h2 id="projects-title">Projects that <span>Deliver Results</span></h2>
+          <h2 id="projects-title">MY - Projects </h2>
           <p>Full-stack products designed for real business workflows, automation, and scale.</p>
         </div>
         <div className="project-grid">
           <article className="project-card">
-            <div className="project-number">01</div><div className="project-icon">✦</div>
-            <p className="project-type">AI AUTOMATION PLATFORM</p>
-            <h3>Chatbot &amp; Survey<br />Automation Platform</h3>
-            <p className="project-tech">Angular · Node.js · Laravel · MySQL</p>
-            <p className="project-summary">A multi-product platform unifying chatbots, surveys, WhatsApp bots, and AI voice agents for multiple client use cases.</p>
-            <ul className="project-points">
-              <li>Developed a multi-product SaaS platform including Chatbot, Survey Builder, WhatsApp Bot, and AI Voice Agent.</li>
-              <li>Built an AI-powered chatbot system combining FAQ automation and LLM-based dynamic responses.</li>
-              <li>Reduced manual customer support effort by 40% using automated FAQ handling.</li>
-              <li>Designed a hybrid chatbot architecture (rule-based + AI-driven).</li>
-              <li>Created a drag-and-drop survey &amp; chatbot builder with conditional logic (skip logic, routing).</li>
-              <li>Integrated WhatsApp API, Email Notifications, and Webhooks for real-time communication.</li>
-              <li>Developed a multi-tenant system with role-based access (Super Admin, Admin, User).</li>
-              <li>Implemented data masking, subscription controls, and response limits for security and scalability.</li>
-              <li>Built an AI Voice Agent with real-time interaction and multilingual support.</li>
-              <li>Improved backend reliability using cron jobs and retry mechanisms.</li>
-            </ul>
+            <div className="project-number">01</div>
+            <div className="project-content-left">
+              <div className="project-icon">✦</div>
+              <p className="project-type">AI AUTOMATION PLATFORM</p>
+              <h3>Chatbot &amp; Survey Automation Platform</h3>
+              <p className="project-tech">Angular · Node.js · Laravel · MySQL</p>
+              <p className="project-summary">A multi-product platform unifying chatbots, surveys, WhatsApp bots, and AI voice agents for multiple client use cases.</p>
+            </div>
+            <div className="project-content-right">
+              <ul className="project-points">
+                <li>Developed a multi-product SaaS platform including Chatbot, Survey Builder, WhatsApp Bot, and AI Voice Agent.</li>
+                <li>Built an AI-powered chatbot system combining FAQ automation and LLM-based dynamic responses.</li>
+                <li>Reduced manual customer support effort by 40% using automated FAQ handling.</li>
+                <li>Designed a hybrid chatbot architecture (rule-based + AI-driven).</li>
+                <li>Created a drag-and-drop survey &amp; chatbot builder with conditional logic (skip logic, routing).</li>
+                <li>Integrated WhatsApp API, Email Notifications, and Webhooks for real-time communication.</li>
+                <li>Developed a multi-tenant system with role-based access (Super Admin, Admin, User).</li>
+                <li>Implemented data masking, subscription controls, and response limits for security and scalability.</li>
+                <li>Built an AI Voice Agent with real-time interaction and multilingual support.</li>
+                <li>Improved backend reliability using cron jobs and retry mechanisms.</li>
+              </ul>
+            </div>
             <div className="project-footer">
               <span>Angular + Laravel + MySQL</span>
-             
             </div>
           </article>
           <article className="project-card">
-            <div className="project-number">02</div><div className="project-icon crm-icon">⌘</div>
-            <p className="project-type">BUSINESS PLATFORM</p>
-            <h3>CRM<br />Management System</h3>
-            <p className="project-tech">React · Node.js · Express.js · MySQL</p>
-            <p className="project-summary">A custom CRM that gives teams one place to manage leads, customers, and daily business workflows.</p>
-            <ul className="project-points">
-              <li>Developed a custom CRM system to manage leads, customers, and workflows.</li>
-              <li>Designed a Lead Management Module to capture, assign, and track leads efficiently.</li>
-              <li>Automated workflows for lead assignment, follow-ups, and notifications (Email &amp; WhatsApp).</li>
-              <li>Built activity tracking and audit logs for system monitoring and user actions.</li>
-              <li>Integrated communication systems for customer engagement and retention.</li>
-              <li>Developed role-based user management system (Admin, Employee).</li>
-              <li>Ensured data security and validation using RBAC and masking techniques.</li>
-              <li>Implemented real-time notifications for important updates and alerts.</li>
-               <li>User attendance tracking modules to monitor employee presence.</li>
-            </ul>
+            <div className="project-number">02</div>
+            <div className="project-content-left">
+              <div className="project-icon crm-icon">⌘</div>
+              <p className="project-type">BUSINESS PLATFORM</p>
+              <h3>CRM Management System</h3>
+              <p className="project-tech">React · Node.js · Express.js · MySQL</p>
+              <p className="project-summary">A custom CRM that gives teams one place to manage leads, customers, and daily business workflows.</p>
+            </div>
+            <div className="project-content-right">
+              <ul className="project-points">
+                <li>Developed a custom CRM system to manage leads, customers, and workflows.</li>
+                <li>Designed a Lead Management Module to capture, assign, and track leads efficiently.</li>
+                <li>Automated workflows for lead assignment, follow-ups, and notifications (Email &amp; WhatsApp).</li>
+                <li>Built activity tracking and audit logs for system monitoring and user actions.</li>
+                <li>Integrated communication systems for customer engagement and retention.</li>
+                <li>Developed role-based user management system (Admin, Employee).</li>
+                <li>Ensured data security and validation using RBAC and masking techniques.</li>
+                <li>Implemented real-time notifications for important updates and alerts.</li>
+                <li>User attendance tracking modules to monitor employee presence.</li>
+              </ul>
+            </div>
             <div className="project-footer"><span>React + Node.js + MySQL</span></div>
+          </article>
+          <article className="project-card">
+            <div className="project-number">03</div>
+            <div className="project-content-left">
+              <div className="project-icon ai-icon">🤖</div>
+              <p className="project-type">AI &amp; VOICE PLATFORM</p>
+              <h3>AI-Agent (R-Agent)</h3>
+              <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
+              <p className="project-summary">An AI-powered CRM voice-agent &amp; telecalling platform with real-time conversations, WhatsApp messaging, and call analytics.</p>
+            </div>
+            <div className="project-content-right">
+              <ul className="project-points">
+                <li>Built a multi-product AI platform including AI Telecalling, AI Voice Agent, AI Text, and WhatsApp automation.</li>
+                <li>Implemented real-time voice communication using WebSockets &amp; Gemini Live, integrated with TeleCMI, Twilio, and Exotel.</li>
+                <li>Developed call analysis functionality to ingest call recordings, process conversations with AI, extract insights, and sync to CRM.</li>
+                <li>Built AI-powered agent configuration workflows for persona, tone, voice selection, avatar setup, and WhatsApp mapping.</li>
+                <li>Integrated WhatsApp Business API with inbox management, AI auto-replies, broadcast workflows, and template analytics.</li>
+                <li>Engineered scalable FastAPI backend with REST APIs, WebSockets, admin audit tracking, and PostgreSQL storage abstraction.</li>
+              </ul>
+            </div>
+            <div className="project-footer"><span>Angular + Python (FastAPI) + PostgreSQL</span></div>
           </article>
         </div>
       </section>

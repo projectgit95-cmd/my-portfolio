@@ -634,17 +634,17 @@ h1 {
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
-  width: min(1320px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: min(1280px, 100%);
   margin: auto;
 }
 
 .project-card {
   position: relative;
-  min-height: 610px;
-  padding: 38px;
+  min-height: auto;
+  padding: 38px 42px 30px;
   overflow: hidden;
   border: 1px solid #2d2744;
   border-radius: 25px;
@@ -652,6 +652,28 @@ h1 {
   box-shadow: 0 20px 45px rgba(0, 0, 0, .17);
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
   animation: project-rise .75s both;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 32px 26px 24px;
+  }
+}
+
+.project-content-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content-right {
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:nth-child(2) {
@@ -673,7 +695,7 @@ h1 {
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-6px);
   border-color: #6849ba;
   box-shadow: 0 28px 60px rgba(38, 15, 80, .3);
 }
@@ -711,8 +733,13 @@ h1 {
   font-size: 27px;
 }
 
+.ai-icon {
+  background: linear-gradient(135deg, #8a37f5, #e038ad);
+  font-size: 25px;
+}
+
 .project-type {
-  margin: 31px 0 11px;
+  margin: 24px 0 10px;
   color: #9174ed;
   font-size: 12px;
   font-weight: 800;
@@ -722,20 +749,19 @@ h1 {
 .project-card h3 {
   margin: 0;
   color: #f0effa;
-  font-size: clamp(28px, 2.5vw, 38px);
-  line-height: 1.12;
-  letter-spacing: -1.4px;
+  font-size: clamp(26px, 2.2vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -1.2px;
 }
 
 .project-tech {
-  margin: 16px 0 21px;
+  margin: 14px 0 16px;
   color: #6997f6;
   font-size: 15px;
   font-weight: 650;
 }
 
 .project-summary {
-  min-height: 74px;
   margin: 0;
   color: #aaa8c3;
   line-height: 1.62;
@@ -743,9 +769,9 @@ h1 {
 
 .project-points {
   display: grid;
-  gap: 13px;
+  gap: 12px;
   padding: 0;
-  margin: 27px 0 32px;
+  margin: 0;
   list-style: none;
   color: #c1bed4;
   font-size: 14px;
@@ -769,13 +795,11 @@ h1 {
 }
 
 .project-footer {
-  position: absolute;
-  right: 38px;
-  bottom: 15px;
-  left: 38px;
+  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
-  padding-top: 19px;
+  padding-top: 18px;
+  margin-top: 10px;
   border-top: 1px solid #2a273a;
   color: #9591b6;
   font-size: 13px;
