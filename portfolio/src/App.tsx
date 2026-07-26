@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react'
 import portrait from './assets/gemini.png'
+import crmProjectImage from './assets/I5oWOK9AqjnnObgZVrSn-.png'
+import chatbotProjectImage from './assets/WhatsApp Image 2026-07-26 at 12.37.05 PM.jpeg'
+import aiAgentProjectImage from './assets/WhatsApp Image 2026-07-26 at 12.37.06 PM.jpeg'
 import './App.css'
 
-const resumePdf = '/ragulan_resume.pdf'
+const resumePdf = '/Ragul-Resume.pdf'
 
 const Arrow = () => <span aria-hidden="true">↗</span>
 
 const skills = [
-  
+
   ['5', 'HTML5', 'html'],
   ['3', 'CSS3', 'css'],
   ['B', 'Bootstrap', 'bootstrap'],
@@ -166,8 +169,8 @@ function App() {
             Full Stack Developer with 2+ years of experience building scalable web applications. Skilled in Angular, React.js, Node.js, and database management. Experienced in developing chatbot platforms with FAQ automation and LLM-based AI features, CRM integrations, and real-time analytics. Strong expertise in API development, multi-tenant architecture, and intelligent automation systems.
           </p>
           <div className="actions">
-           
-            <a className="primary-button" href={resumePdf} download="Ragulan_resume.pdf"><span>⇩</span>Download Resume <Arrow /></a>
+
+            <a className="primary-button" href={resumePdf} download="Ragul-Resume.pdf"><span>⇩</span>Download Resume <Arrow /></a>
           </div>
           <div className="social-links" aria-label="Social links">
             <a className="linkedin-icon" href="https://www.linkedin.com/in/ragulan-r-b18606309" target="_blank" rel="noreferrer" aria-label="LinkedIn">
@@ -191,7 +194,7 @@ function App() {
 
       <section className="skills-section" id="skills" aria-labelledby="skills-title">
         <div className="skills-heading">
-         
+
           <h2 id="skills-title">Skills &amp; <span>Technologies</span></h2>
           <p>Tools and technologies I use to bring ideas to life -perfect product.</p>
         </div>
@@ -209,8 +212,8 @@ function App() {
           <span><b>Backend:</b> Laravel, Node.js, Express.js</span>
           <span><b>Database:</b> MySQL, PostgreSQL</span>
           <span><b>Testing:</b> Angular-Jasmine/Karma, Playwright</span>
-            <span><b>Tools & Technologies: </b> REST APIs, Webhooks,  Cron Jobs,Post man, Thunder client</span>
-            <span><b>Server & Deployment:</b> WHM (Web Host Manager), Plesk Panel, Git, GitHub, CI/CD, Live Deployment, Domain Setup</span>
+          <span><b>Tools & Technologies: </b> REST APIs, Webhooks,  Cron Jobs,Post man, Thunder client</span>
+          <span><b>Server & Deployment:</b> WHM (Web Host Manager), Plesk Panel, Git, GitHub, CI/CD, Live Deployment, Domain Setup</span>
 
         </div>
       </section>
@@ -223,18 +226,23 @@ function App() {
         </div>
         <article className="experience-card">
           <div className="experience-date">
-            <span className="experience-period">OCT 2024 —<br /><span>PRESENT</span></span>
+            <span className="experience-period">JULY 2024 —<br /><span>PRESENT</span></span>
             <img className="experience-img" src="/Rsoft_logo.png" alt="Rsoft Technologies logo" />
           </div>
           <div className="experience-content">
             <h3>Senior Software Developer</h3>
             <p className="company">Rsoft Technologies Pvt Ltd <span>·</span> Chennai</p>
             <ul>
-              <li>Engineered scalable web apps with Angular + Laravel, improving performance ~30%.</li>
-              <li>Built full-stack features: REST APIs, authentication, backend data flow.</li>
-              <li>Administered server environments ensuring 99.9% uptime on production.</li>
-              <li>Streamlined Git + CI/CD pipelines, reducing deployment on Plesk.</li>
-              <li>Maintained server environments, handled domain setups, and managed live deployment configurations. </li>
+              <li>Led a chatbot development team, delivering AI-powered CRM solutions across Voice, Web, and WhatsApp channels.</li>
+              <li>Designed and developed scalable full-stack applications using Angular, Node.js, and Laravel for high-performance systems.</li>
+              <li>Architected AI chatbot workflows for lead capture, qualification, and automated customer engagement.</li>
+              <li>Integrated real-time communication systems using WebSockets and third-party APIs (Twilio, Exotel).</li>
+              <li>Implemented AI-driven features like automated responses, lead scoring, and conversation analysis.</li>
+              <li>Built and managed RESTful APIs, ensuring secure authentication and efficient data flow.</li>
+              <li>Automated CRM workflows, improving lead conversion and reducing manual effort.</li>
+              <li>Mentored junior developers, improving team productivity and code quality.</li>
+              <li>Handled end-to-end deployment, including CI/CD pipelines, server setup, and domain configuration.</li>
+
             </ul>
           </div>
         </article>
@@ -244,21 +252,29 @@ function App() {
 
       <section className="projects-section" id="projects" aria-labelledby="projects-title">
         <div className="projects-heading">
-          
+
           <h2 id="projects-title">MY - Projects </h2>
           <p>Full-stack products designed for real business workflows, automation, and scale.</p>
         </div>
         <div className="project-grid">
           <article className="project-card">
             <div className="project-number">01</div>
-            <div className="project-content-left">
+            <div className="project-image-panel">
               <div className="project-icon">✦</div>
               <p className="project-type">AI AUTOMATION PLATFORM</p>
               <h3>Chatbot &amp; Survey Automation Platform</h3>
               <p className="project-tech">Angular · Node.js · Laravel · MySQL</p>
-              <p className="project-summary">A multi-product platform unifying chatbots, surveys, WhatsApp bots, and AI voice agents for multiple client use cases.</p>
+              <img className="project-preview" src={chatbotProjectImage} alt="Chatbot, survey, WhatsApp bot, and voice agent platform" />
             </div>
             <div className="project-content-right">
+              <div className="project-content-left">
+
+                <div className="project-icon">✦</div>
+                <p className="project-type">AI AUTOMATION PLATFORM</p>
+                <h3>Chatbot &amp; Survey Automation Platform</h3>
+                <p className="project-tech">Angular · Node.js · Laravel · MySQL</p>
+                <p className="project-summary">A multi-product platform unifying chatbots, surveys, WhatsApp bots, and AI voice agents for multiple client use cases.</p>
+              </div>
               <ul className="project-points">
                 <li>Developed a multi-product SaaS platform including Chatbot, Survey Builder, WhatsApp Bot, and AI Voice Agent.</li>
                 <li>Built an AI-powered chatbot system combining FAQ automation and LLM-based dynamic responses.</li>
@@ -268,8 +284,7 @@ function App() {
                 <li>Integrated WhatsApp API, Email Notifications, and Webhooks for real-time communication.</li>
                 <li>Developed a multi-tenant system with role-based access (Super Admin, Admin, User).</li>
                 <li>Implemented data masking, subscription controls, and response limits for security and scalability.</li>
-                <li>Built an AI Voice Agent with real-time interaction and multilingual support.</li>
-                <li>Improved backend reliability using cron jobs and retry mechanisms.</li>
+
               </ul>
             </div>
             <div className="project-footer">
@@ -278,14 +293,23 @@ function App() {
           </article>
           <article className="project-card">
             <div className="project-number">02</div>
-            <div className="project-content-left">
-              <div className="project-icon crm-icon">⌘</div>
-              <p className="project-type">BUSINESS PLATFORM</p>
-              <h3>CRM Management System</h3>
-              <p className="project-tech">React · Node.js · Express.js · MySQL</p>
-              <p className="project-summary">A custom CRM that gives teams one place to manage leads, customers, and daily business workflows.</p>
+            <div className="project-image-panel">
+              <div className="project-image-heading">
+                <div className="project-icon crm-icon">⌘</div>
+                <p className="project-type">BUSINESS PLATFORM</p>
+                <h3>CRM Management System</h3>
+                <p className="project-tech">React · Node.js · Express.js · MySQL</p>
+              </div>
+              <img className="project-preview" src={crmProjectImage} alt="CRM management platform" />
             </div>
             <div className="project-content-right">
+              <div className="project-content-left">
+                <div className="project-icon crm-icon">⌘</div>
+                <p className="project-type">BUSINESS PLATFORM</p>
+                <h3>CRM Management System</h3>
+                <p className="project-tech">React · Node.js · Express.js · MySQL</p>
+                <p className="project-summary">A custom CRM that gives teams one place to manage leads, customers, and daily business workflows.</p>
+              </div>
               <ul className="project-points">
                 <li>Developed a custom CRM system to manage leads, customers, and workflows.</li>
                 <li>Designed a Lead Management Module to capture, assign, and track leads efficiently.</li>
@@ -302,21 +326,40 @@ function App() {
           </article>
           <article className="project-card">
             <div className="project-number">03</div>
-            <div className="project-content-left">
-              <div className="project-icon ai-icon">🤖</div>
-              <p className="project-type">AI &amp; VOICE PLATFORM</p>
-              <h3>AI-Agent (R-Agent)</h3>
-              <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
-              <p className="project-summary">An AI-powered CRM voice-agent &amp; telecalling platform with real-time conversations, WhatsApp messaging, and call analytics.</p>
+            <div className="project-image-panel">
+              <div className="project-image-heading">
+                <div className="project-icon ai-icon">🤖</div>
+                <p className="project-type">AI &amp; VOICE PLATFORM</p>
+                <h3>AI-Agent (R-Agent)</h3>
+                <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
+              </div>
+              <img className="project-preview" src={aiAgentProjectImage} alt="R Agent AI sales platform architecture" />
             </div>
             <div className="project-content-right">
+              <div className="project-content-left">
+                <div className="project-icon ai-icon">🤖</div>
+                <p className="project-type">AI &amp; VOICE PLATFORM</p>
+                <h3>AI-Agent (R-Agent)</h3>
+                <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
+                <p className="project-summary">An AI-powered CRM voice-agent &amp; telecalling platform with real-time conversations, WhatsApp messaging, and call analytics.</p>
+              </div>
               <ul className="project-points">
+                <li>Developed an omnichannel AI chatbot supporting Voice, Web, and WhatsApp platforms.</li>
+                <li>Implemented real-time conversation tracking and CRM synchronization.</li>
+                <li>Built an AI-based lead qualification system, increasing sales efficiency.</li>
+                <li>Designed conversation flow logic for better user engagement and automation.</li>
+                <li>Integrated telephony APIs (Twilio, Exotel) for AI-based call automation.</li>
                 <li>Built a multi-product AI platform including AI Telecalling, AI Voice Agent, AI Text, and WhatsApp automation.</li>
                 <li>Implemented real-time voice communication using WebSockets &amp; Gemini Live, integrated with TeleCMI, Twilio, and Exotel.</li>
                 <li>Developed call analysis functionality to ingest call recordings, process conversations with AI, extract insights, and sync to CRM.</li>
                 <li>Built AI-powered agent configuration workflows for persona, tone, voice selection, avatar setup, and WhatsApp mapping.</li>
                 <li>Integrated WhatsApp Business API with inbox management, AI auto-replies, broadcast workflows, and template analytics.</li>
                 <li>Engineered scalable FastAPI backend with REST APIs, WebSockets, admin audit tracking, and PostgreSQL storage abstraction.</li>
+                <li>Provides 24/7 customer support ensuring no enquiry is missed.</li>
+                <li>Analyzes conversations to generate insights and improve sales performance.</li>
+                <li>Enables smooth handover to human agents with complete conversation context</li>
+                <li>Automates sales workflows to increase efficiency and reduce manual effort.</li>
+                <li>Boosts conversion rates with faster response times and personalized interactions.</li>
               </ul>
             </div>
             <div className="project-footer"><span>Angular + Python (FastAPI) + PostgreSQL</span></div>
@@ -327,7 +370,7 @@ function App() {
       <section className="product-showcase-section" aria-labelledby="product-showcase-title">
         <div className="product-showcase-heading">
           <h2 id="product-showcase-title">Explore the <span>Project</span></h2>
-        
+
         </div>
         <div className="showcase-tabs" role="tablist" aria-label="Product previews">
           {productShowcases.map((showcase, index) => (
