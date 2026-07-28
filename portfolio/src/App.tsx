@@ -245,12 +245,6 @@ function App() {
         <div className="project-grid">
           <article className="project-card">
             <div className="project-number">01</div>
-            <div className="project-image-panel">
-              <div className="project-icon">✦</div>
-              <p className="project-type">AI AUTOMATION PLATFORM</p>
-              <h3>Chatbot &amp; Survey Automation Platform</h3>
-              <p className="project-tech">Angular · Node.js · Laravel · MySQL</p>
-            </div>
             <div className="project-content-right">
               <div className="project-content-left">
 
@@ -302,17 +296,11 @@ function App() {
           </article>
           <article className="project-card">
             <div className="project-number">03</div>
-            <div className="project-image-panel">
-              <div className="project-image-heading">
-                <div className="project-icon ai-icon">🤖</div>
-                <p className="project-type">AI &amp; VOICE PLATFORM</p>
-                <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
-              </div>
-            </div>
             <div className="project-content-right">
               <div className="project-content-left">
                 <div className="project-icon ai-icon">🤖</div>
                 <p className="project-type">AI &amp; VOICE PLATFORM</p>
+                <h3>AI-Agent (R-Agent)</h3>
                 <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
                 <p className="project-summary">An AI-powered CRM voice-agent &amp; telecalling platform with real-time conversations, WhatsApp messaging, and call analytics.</p>
               </div>
