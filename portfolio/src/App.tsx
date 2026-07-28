@@ -325,7 +325,6 @@ function App() {
               <div className="project-image-heading">
                 <div className="project-icon ai-icon">🤖</div>
                 <p className="project-type">AI &amp; VOICE PLATFORM</p>
-                <h3>AI-Agent (R-Agent)</h3>
                 <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
               </div>
             </div>
@@ -333,7 +332,6 @@ function App() {
               <div className="project-content-left">
                 <div className="project-icon ai-icon">🤖</div>
                 <p className="project-type">AI &amp; VOICE PLATFORM</p>
-                <h3>AI-Agent (R-Agent)</h3>
                 <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
                 <p className="project-summary">An AI-powered CRM voice-agent &amp; telecalling platform with real-time conversations, WhatsApp messaging, and call analytics.</p>
               </div>
