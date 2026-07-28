@@ -1,13 +1,21 @@
 import { useEffect, useState } from 'react'
 import portrait from './assets/gemini.png'
-import crmProjectImage from './assets/I5oWOK9AqjnnObgZVrSn-.png'
-import chatbotProjectImage from './assets/WhatsApp Image 2026-07-26 at 12.37.05 PM.jpeg'
-import aiAgentProjectImage from './assets/WhatsApp Image 2026-07-26 at 12.37.06 PM.jpeg'
 import './App.css'
 
 const resumePdf = '/Ragul-Resume.pdf'
 
 const Arrow = () => <span aria-hidden="true">↗</span>
+
+const codeSnippets = [
+  { text: '</>', top: '8%', left: '4%', size: 34, duration: 14, delay: 0 },
+  { text: '{ }', top: '66%', left: '9%', size: 40, duration: 16, delay: 1.2 },
+  { text: '01', top: '18%', left: '86%', size: 30, duration: 12, delay: 0.6 },
+  { text: 'const app', top: '84%', left: '76%', size: 20, duration: 18, delay: 2 },
+  { text: '=>', top: '42%', left: '93%', size: 36, duration: 15, delay: 0.9 },
+  { text: 'npm i', top: '4%', left: '46%', size: 18, duration: 20, delay: 1.6 },
+  { text: 'SELECT *', top: '92%', left: '32%', size: 16, duration: 17, delay: 0.3 },
+  { text: '01101', top: '32%', left: '2%', size: 20, duration: 19, delay: 2.4 },
+]
 
 const skills = [
 
@@ -45,50 +53,12 @@ const skillIcons: Record<string, string> = {
   thunderclient: '/thunder-client.svg',
 }
 
-const showcaseImages = import.meta.glob('./assets/{buttons,chatbot,survay form,voice-agent}/*.png', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>
-
-const productShowcases = [
-  { id: 'survey', label: 'Survey Form', folder: 'survay form' },
-  { id: 'chatbot', label: 'Chatbot', folder: 'chatbot' },
-  { id: 'buttons', label: 'Buttons', folder: 'buttons' },
-  { id: 'voice', label: 'Voice Agent', folder: 'voice-agent' },
-].map((showcase) => ({
-  ...showcase,
-  images: Object.entries(showcaseImages)
-    .filter(([path]) => path.includes(`/assets/${showcase.folder}/`))
-    .sort(([first], [second]) => first.localeCompare(second))
-    .map(([, image]) => image),
-}))
-
 function App() {
   const introText = '— Hey, I am Ragulan'
   const roleText = 'Full Stack Developer'
   const [typedIntro, setTypedIntro] = useState('')
   const [typedRole, setTypedRole] = useState('')
   const [typingDone, setTypingDone] = useState(false)
-  const [activeShowcase, setActiveShowcase] = useState(0)
-  const [showcaseSlides, setShowcaseSlides] = useState<{ current: number; previous: number | null }>({ current: 0, previous: null })
-  const currentShowcase = productShowcases[activeShowcase]
-  const activeSlide = showcaseSlides.current
-
-  const selectShowcase = (index: number) => {
-    setActiveShowcase(index)
-    setShowcaseSlides({ current: 0, previous: null })
-  }
-
-  useEffect(() => {
-    const slider = window.setInterval(() => {
-      setShowcaseSlides(({ current }) => ({
-        previous: current,
-        current: (current + 1) % currentShowcase.images.length,
-      }))
-    }, 3200)
-
-    return () => window.clearInterval(slider)
-  }, [currentShowcase])
 
   useEffect(() => {
     let introIndex = 0
@@ -162,6 +132,22 @@ function App() {
       </header>
 
       <section className="hero-section" id="home">
+        <div className="code-bg" aria-hidden="true">
+          {codeSnippets.map((snippet, index) => (
+            <span
+              key={`${snippet.text}-${index}`}
+              style={{
+                top: snippet.top,
+                left: snippet.left,
+                fontSize: snippet.size,
+                animationDuration: `${snippet.duration}s`,
+                animationDelay: `${snippet.delay}s`,
+              }}
+            >
+              {snippet.text}
+            </span>
+          ))}
+        </div>
         <div className="intro" id="about">
           <p className={`eyebrow typing-line ${typingDone ? 'is-complete' : ''}`}>{typedIntro}</p>
           <h1 className={`typing-role ${typingDone ? 'is-complete' : ''}`}>{typedRole}</h1>
@@ -259,13 +245,6 @@ function App() {
         <div className="project-grid">
           <article className="project-card">
             <div className="project-number">01</div>
-            <div className="project-image-panel">
-              <div className="project-icon">✦</div>
-              <p className="project-type">AI AUTOMATION PLATFORM</p>
-              <h3>Chatbot &amp; Survey Automation Platform</h3>
-              <p className="project-tech">Angular · Node.js · Laravel · MySQL</p>
-              <img className="project-preview" src={chatbotProjectImage} alt="Chatbot, survey, WhatsApp bot, and voice agent platform" />
-            </div>
             <div className="project-content-right">
               <div className="project-content-left">
 
@@ -293,15 +272,6 @@ function App() {
           </article>
           <article className="project-card">
             <div className="project-number">02</div>
-            <div className="project-image-panel">
-              <div className="project-image-heading">
-                <div className="project-icon crm-icon">⌘</div>
-                <p className="project-type">BUSINESS PLATFORM</p>
-                <h3>CRM Management System</h3>
-                <p className="project-tech">React · Node.js · Express.js · MySQL</p>
-              </div>
-              <img className="project-preview" src={crmProjectImage} alt="CRM management platform" />
-            </div>
             <div className="project-content-right">
               <div className="project-content-left">
                 <div className="project-icon crm-icon">⌘</div>
@@ -326,20 +296,11 @@ function App() {
           </article>
           <article className="project-card">
             <div className="project-number">03</div>
-            <div className="project-image-panel">
-              <div className="project-image-heading">
-                <div className="project-icon ai-icon">🤖</div>
-                <p className="project-type">AI &amp; VOICE PLATFORM</p>
-                <h3>AI-Agent (R-Agent)</h3>
-                <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
-              </div>
-              <img className="project-preview" src={aiAgentProjectImage} alt="R Agent AI sales platform architecture" />
-            </div>
             <div className="project-content-right">
               <div className="project-content-left">
                 <div className="project-icon ai-icon">🤖</div>
                 <p className="project-type">AI &amp; VOICE PLATFORM</p>
-                <h3>AI-Agent (R-Agent)</h3>
+                <h3>AI-Agent  </h3>
                 <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
                 <p className="project-summary">An AI-powered CRM voice-agent &amp; telecalling platform with real-time conversations, WhatsApp messaging, and call analytics.</p>
               </div>
@@ -364,44 +325,6 @@ function App() {
             </div>
             <div className="project-footer"><span>Angular + Python (FastAPI) + PostgreSQL</span></div>
           </article>
-        </div>
-      </section>
-
-      <section className="product-showcase-section" aria-labelledby="product-showcase-title">
-        <div className="product-showcase-heading">
-          <h2 id="product-showcase-title">Explore the <span>Project</span></h2>
-
-        </div>
-        <div className="showcase-tabs" role="tablist" aria-label="Product previews">
-          {productShowcases.map((showcase, index) => (
-            <button
-              className={index === activeShowcase ? 'is-active' : ''}
-              key={showcase.id}
-              onClick={() => selectShowcase(index)}
-              role="tab"
-              aria-selected={index === activeShowcase}
-              type="button"
-            >
-              {showcase.label}
-            </button>
-          ))}
-        </div>
-        <div className="showcase-slider">
-          {showcaseSlides.previous !== null && (
-            <img
-              className="showcase-slide showcase-slide-out"
-              key={`previous-${currentShowcase.id}-${showcaseSlides.previous}`}
-              src={currentShowcase.images[showcaseSlides.previous]}
-              alt=""
-            />
-          )}
-          <img
-            className="showcase-slide showcase-slide-in"
-            key={`${currentShowcase.id}-${activeSlide}`}
-            src={currentShowcase.images[activeSlide]}
-            alt={`${currentShowcase.label} screen ${activeSlide + 1}`}
-          />
-          <span className="showcase-counter">{activeSlide + 1} / {currentShowcase.images.length}</span>
         </div>
       </section>
 
