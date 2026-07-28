@@ -367,44 +367,6 @@ function App() {
         </div>
       </section>
 
-      <section className="product-showcase-section" aria-labelledby="product-showcase-title">
-        <div className="product-showcase-heading">
-          <h2 id="product-showcase-title">Explore the <span>Project</span></h2>
-
-        </div>
-        <div className="showcase-tabs" role="tablist" aria-label="Product previews">
-          {productShowcases.map((showcase, index) => (
-            <button
-              className={index === activeShowcase ? 'is-active' : ''}
-              key={showcase.id}
-              onClick={() => selectShowcase(index)}
-              role="tab"
-              aria-selected={index === activeShowcase}
-              type="button"
-            >
-              {showcase.label}
-            </button>
-          ))}
-        </div>
-        <div className="showcase-slider">
-          {showcaseSlides.previous !== null && (
-            <img
-              className="showcase-slide showcase-slide-out"
-              key={`previous-${currentShowcase.id}-${showcaseSlides.previous}`}
-              src={currentShowcase.images[showcaseSlides.previous]}
-              alt=""
-            />
-          )}
-          <img
-            className="showcase-slide showcase-slide-in"
-            key={`${currentShowcase.id}-${activeSlide}`}
-            src={currentShowcase.images[activeSlide]}
-            alt={`${currentShowcase.label} screen ${activeSlide + 1}`}
-          />
-          <span className="showcase-counter">{activeSlide + 1} / {currentShowcase.images.length}</span>
-        </div>
-      </section>
-
       <section className="education-section" aria-labelledby="education-title">
         <div className="education-heading">
           <h2 id="education-title">Academic <span>Journey</span></h2>
