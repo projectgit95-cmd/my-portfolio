@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
 import portrait from './assets/gemini.png'
-import crmProjectImage from './assets/I5oWOK9AqjnnObgZVrSn-.png'
-import chatbotProjectImage from './assets/WhatsApp Image 2026-07-26 at 12.37.05 PM.jpeg'
-import aiAgentProjectImage from './assets/WhatsApp Image 2026-07-26 at 12.37.06 PM.jpeg'
 import './App.css'
 
 const resumePdf = '/Ragul-Resume.pdf'
