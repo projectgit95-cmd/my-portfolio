@@ -261,7 +261,6 @@ function App() {
               <p className="project-type">AI AUTOMATION PLATFORM</p>
               <h3>Chatbot &amp; Survey Automation Platform</h3>
               <p className="project-tech">Angular · Node.js · Laravel · MySQL</p>
-              <img className="project-preview" src={chatbotProjectImage} alt="Chatbot, survey, WhatsApp bot, and voice agent platform" />
             </div>
             <div className="project-content-right">
               <div className="project-content-left">
@@ -297,7 +296,6 @@ function App() {
                 <h3>CRM Management System</h3>
                 <p className="project-tech">React · Node.js · Express.js · MySQL</p>
               </div>
-              <img className="project-preview" src={crmProjectImage} alt="CRM management platform" />
             </div>
             <div className="project-content-right">
               <div className="project-content-left">
@@ -330,7 +328,6 @@ function App() {
                 <h3>AI-Agent (R-Agent)</h3>
                 <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
               </div>
-              <img className="project-preview" src={aiAgentProjectImage} alt="R Agent AI sales platform architecture" />
             </div>
             <div className="project-content-right">
               <div className="project-content-left">
