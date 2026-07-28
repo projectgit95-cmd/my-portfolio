@@ -245,15 +245,12 @@ function App() {
         <div className="project-grid">
           <article className="project-card">
             <div className="project-number">01</div>
-<<<<<<< HEAD
-=======
             <div className="project-image-panel">
               <div className="project-icon">✦</div>
               <p className="project-type">AI AUTOMATION PLATFORM</p>
               <h3>Chatbot &amp; Survey Automation Platform</h3>
               <p className="project-tech">Angular · Node.js · Laravel · MySQL</p>
             </div>
->>>>>>> cb94c8f5031f7ca379abd1ce04ec336b023c52d0
             <div className="project-content-right">
               <div className="project-content-left">
 
@@ -281,17 +278,6 @@ function App() {
           </article>
           <article className="project-card">
             <div className="project-number">02</div>
-<<<<<<< HEAD
-=======
-            <div className="project-image-panel">
-              <div className="project-image-heading">
-                <div className="project-icon crm-icon">⌘</div>
-                <p className="project-type">BUSINESS PLATFORM</p>
-                <h3>CRM Management System</h3>
-                <p className="project-tech">React · Node.js · Express.js · MySQL</p>
-              </div>
-            </div>
->>>>>>> cb94c8f5031f7ca379abd1ce04ec336b023c52d0
             <div className="project-content-right">
               <div className="project-content-left">
                 <div className="project-icon crm-icon">⌘</div>
@@ -316,8 +302,6 @@ function App() {
           </article>
           <article className="project-card">
             <div className="project-number">03</div>
-<<<<<<< HEAD
-=======
             <div className="project-image-panel">
               <div className="project-image-heading">
                 <div className="project-icon ai-icon">🤖</div>
@@ -325,15 +309,10 @@ function App() {
                 <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
               </div>
             </div>
->>>>>>> cb94c8f5031f7ca379abd1ce04ec336b023c52d0
             <div className="project-content-right">
               <div className="project-content-left">
                 <div className="project-icon ai-icon">🤖</div>
                 <p className="project-type">AI &amp; VOICE PLATFORM</p>
-<<<<<<< HEAD
-                <h3>AI-Agent  </h3>
-=======
->>>>>>> cb94c8f5031f7ca379abd1ce04ec336b023c52d0
                 <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
                 <p className="project-summary">An AI-powered CRM voice-agent &amp; telecalling platform with real-time conversations, WhatsApp messaging, and call analytics.</p>
               </div>
