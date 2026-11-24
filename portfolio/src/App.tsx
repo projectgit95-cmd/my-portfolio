@@ -156,7 +156,7 @@ function App() {
           </p>
           <div className="actions">
 
-            <a className="primary-button" href={resumePdf} download="Ragul-Resume.pdf"><span>⇩</span>Download Resume <Arrow /></a>
+            <a className="primary-button" href={resumePdf} download="Ragulan A_Resume.pdf"><span>⇩</span>Download Resume <Arrow /></a>
           </div>
           <div className="social-links" aria-label="Social links">
             <a className="linkedin-icon" href="https://www.linkedin.com/in/ragulan-r-b18606309" target="_blank" rel="noreferrer" aria-label="LinkedIn">
@@ -267,7 +267,7 @@ function App() {
               </ul>
             </div>
             <div className="project-footer">
-              <span>Angular + Laravel + MySQL</span>
+              <span>Angular + Node.js + Laravel + MySQL</span>
             </div>
           </article>
           <article className="project-card">
@@ -292,7 +292,7 @@ function App() {
                 <li>User attendance tracking modules to monitor employee presence.</li>
               </ul>
             </div>
-            <div className="project-footer"><span>React + Node.js + MySQL</span></div>
+            <div className="project-footer"><span>React + Node.js + PostgreSQL</span></div>
           </article>
           <article className="project-card">
             <div className="project-number">03</div>
@@ -300,7 +300,7 @@ function App() {
               <div className="project-content-left">
                 <div className="project-icon ai-icon">🤖</div>
                 <p className="project-type">AI &amp; VOICE PLATFORM</p>
-                <h3>AI-Agent (R-Agent)</h3>
+                <h3>AI-Agent (AI-Agent)</h3>
                 <p className="project-tech">Angular · Python (FastAPI) · Gemini Live · PostgreSQL</p>
                 <p className="project-summary">An AI-powered CRM voice-agent &amp; telecalling platform with real-time conversations, WhatsApp messaging, and call analytics.</p>
               </div>
